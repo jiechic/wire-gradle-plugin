@@ -1,7 +1,31 @@
 Wire Gradle Plugin
 ==================
 
-TODO
+A Gradle plugin for generating Java code for your protocol buffer definitions with Wire
+
+How to use
+----------
+
+in $projectRoot/build.gradle
+
+```
+repositories {
+    maven {
+        url "https://dl.bintray.com/jiechic/maven"
+    }
+}
+```
+```    
+dependencies {
+    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.0'
+}
+```
+
+in module/build.gradle
+```
+apply plugin: 'com.squareup.wire'
+```
+
 
 
 
