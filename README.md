@@ -15,7 +15,7 @@ repositories {
 ```
 ```    
 dependencies {
-    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.0'
+    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.1'
 }
 ```
 
@@ -44,7 +44,7 @@ custom proto srcDirs
 sourceSets {
     main {
         wire {
-            srcDirs("proto")
+            srcDirs += "proto/src"
         }
     }
 }
