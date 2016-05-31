@@ -10,20 +10,44 @@ in $projectRoot/build.gradle
 
 ```
 repositories {
-    maven {
-        url "https://dl.bintray.com/jiechic/maven"
-    }
+    jcenter()
 }
 ```
 ```    
 dependencies {
-    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.0'
+    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.1'
 }
 ```
 
 in module/build.gradle
 ```
 apply plugin: 'com.squareup.wire'
+
+dependencies {
+    compile 'com.squareup.wire:wire-runtime:2.1.2'
+}
+```
+
+
+
+Configure
+---------
+
+delault proto srcDirs
+```
+src/main/proto
+```
+
+custom proto srcDirs
+
+```
+sourceSets {
+    main {
+        wire {
+            srcDirs += "proto/src"
+        }
+    }
+}
 ```
 
 
