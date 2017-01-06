@@ -15,7 +15,7 @@ repositories {
 ```
 ```    
 dependencies {
-    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.1'
+    classpath 'com.jiechic.library.wire:wire-gradle-plugin:1.0.2'
 }
 ```
 
@@ -24,7 +24,7 @@ in module/build.gradle
 apply plugin: 'com.squareup.wire'
 
 dependencies {
-    compile 'com.squareup.wire:wire-runtime:2.1.2'
+    compile 'com.squareup.wire:wire-runtime:2.2.0'
 }
 ```
 
