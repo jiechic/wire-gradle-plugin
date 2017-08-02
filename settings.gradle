@@ -1,0 +1,1 @@
+include ':library', ':demo-java', ':demo-android-library', ':demo-android-app'

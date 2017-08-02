@@ -50,7 +50,9 @@ sourceSets {
 }
 ```
 
-
+wire{
+    android = false
+}
 
 
 License

@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        jcenter()
+//        maven {
+//            url uri('../repo')
+//        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.jiechic.library.wire:wire-gradle-plugin:2.0.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'wire'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+
+    sourceSets {
+        main {
+            wire {
+                srcDir "src/main/proto"
+            }
+        }
+
+    }
+    defaultConfig {
+        applicationId "com.jiechic.proto.wire.demo_android_app"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}

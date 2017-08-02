@@ -21,3 +21,4 @@ build
 .gradle
 local.properties
 reports
+repo
